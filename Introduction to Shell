@@ -1,0 +1,45 @@
+https://explainshell.com/explain/1/apropos
+
+LINUX SHELL
+
+    - Generally called the linux terminal
+    - interface between users and the kernel for a computer system
+    - Text based GUI 
+
+TERMINAL EMULATORS
+
+    - Serves as a interface to the shell interpreter
+    - Provides us with different methods and functions to work with the terminal, such as splitting the terminal into one window, working
+in multiple directories, creating different workspaces, and much more.
+    - An example is Tmux
+
+MOST COMMON SHELL
+
+    - Bourne Again Shell (BASH), it is part of the GNU project.
+    - Other shells exist
+        - Tcsh/Csh
+        - Zsh
+        - Ksh
+        - Fish
+
+PROMPT DESCRIPTION
+
+    - <username>@<hostname><current_working_directory>$
+    - Home directory = ~    (Default when we login)
+    - $ stands for a user whil # stands for root user (Priveleged/Unpriveleged)
+    - Can customize to display other information such as IP address, date, time, the exit status of the last command etc.
+    - Can customize the config file .bashrc for the bash shell
+
+    SPECIAL CHARACTERS FOR CUSTOMIZATION
+      - \d                  Date (Mon Feb 6)
+      - \D{%Y-%m-%d}        Date (YYYY-MM-DD)
+      - \H                  Full hostname
+      - \j                  Number of jobs managed by the shell
+      - \n                  Newline
+      - \r                  Carriage return
+      - \s                  Name of the shell
+      - \t                  Current time 24-hour (HH:MM:SS)
+      - \@                  Current time
+      - \u                  Current username
+      - \w                  Full path to current working directory
+
