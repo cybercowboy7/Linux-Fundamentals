@@ -43,3 +43,8 @@ PROMPT DESCRIPTION
       - \u                  Current username
       - \w                  Full path to current working directory
 
+
+HELP COMMANDS
+
+    - apropos
+        - searches the descriptions for instances of keyword such as "apropos sudo" 
