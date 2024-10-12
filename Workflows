@@ -7,5 +7,32 @@ NAVIGATION
       - ls -la (list all, even hidden directories)
       - ls -li (Display file inodes)
         Breakdonw
-          |type and permissions| Number of hard links to the file/directory| Owner of file/directoy| Group owner of the file/directory| Size of the file| Date and time| Directory Name|
+          |type and permissions| Number of hard links to the file/directory| Owner of file/directoy
+          |Group owner of the file/directory| Size of the file| Date and time| Directory Name|
+
+
+  - Working with Files and Directories
+      - vim
+      - nano
+      - touch <name>
+      - mkdir <name>
+        -p : add a parent directory
+      - tree .
+      - mv : move and also rename files and directories
+        - mv <file/directory> <renamed file/directory>
+      - cp
+
+  - Editing Files
+      Nano
+          - "^" stands for [CTRL} key. 
+
+      VIM
+          - Six modes 
+            - Normal : All inputs are considered commands. 
+            - Insert : All entered characters are inserted into the buffer
+            - Visual : Mark a contiguous part of the text. Can then edit anyway you like or replace etc
+            - Command : Allows single-line commands at the bottom of the editor.
+            - Replace : Newly entered text will overwrite existing characters unless there are no more old characters
+            - Ex : Can execute multiple commands sequentially without returning to Normal Mode after each command
+          - Can utilize vimtutor to practive and get familiar with the editor : Command mode, :Tutor
 
