@@ -6,7 +6,7 @@ NAVIGATION
       - ls -l (lists it vertically)
       - ls -la (list all, even hidden directories)
       - ls -li (Display file inodes)
-        Breakdonw
+        Breakdown
           |type and permissions| Number of hard links to the file/directory| Owner of file/directoy
           |Group owner of the file/directory| Size of the file| Date and time| Directory Name|
 
