@@ -124,6 +124,19 @@ like cURL, netcat wget, python, gcc, are available on the operating system.
                   - We are going to redirect the output of the grepped information to the wc tool in order to display the total number of obtained results
 
 
+    - Filter Contents
+        - more
+          - pager tool that allows us to scroll through the file in an interactive view
+
+        - less
+          - Output does not remain in the terminal like when more is utilized
+
+        - head
+          - Get the first lines of the file. Prints the first ten lines or input, in not specified otherwise.
+
+        - Tail
+
+
 
 
 
