@@ -135,13 +135,70 @@ like cURL, netcat wget, python, gcc, are available on the operating system.
           - Get the first lines of the file. Prints the first ten lines or input, in not specified otherwise.
 
         - Tail
+          - Returns the last ten lines of a file
+
+        - sort
+          - Can sort results alphabeticallys or numerically to get a better overview
+            cat /etc/password | sort
+
+        - grep
+          - Search for specific results that contain patterns that we defined
+            cat /etc/passwd | grep "/bin/bash"
+            cat /etc/passwd | grep -v "false\|nologin"    : the -v option excludes specific results in this case it excludes all users who have disabled the standard shell with the name "/bin/false" or "/usr/bin/nologin"
+
+        - cut
+          - This is used to remove specific delimiters and show the words on a line in a specified position. 
+          - The -d is used in this case
+            cat /etc/passwd | grep -v "false\|nologin" | cut -d":" -f1
+
+        - Tr
+          - To replace certain characters from a line with characters defined by us is the tool Tr
+          - Define which character we want to replace, and as a second option, we define the character we want to replace it with.
+          - Replace the colon character with space
+            cat /etc/passwd | grep -v "false\|nologin" | tr ":" " " 
+
+        - Column
+          - Well suited to display such results in tabular form using the -t option
+            cat /etc/passwd | grep -v "false\|nologin" | tr ":" " " | column -t
+
+        - awk
+          - Allows us to display the first ($1) and last ($NF) result of the line
+            cat /etc/passwd | grep -v "false\|nologin" | tr ":" " " | awk '{print $1, $NF}'
+
+        - sed
+          - Stream editor can be used to substitue text
+          - sed looks for patterns we have defined in the form of regular expressions (regex) and replaces them with another pattern that we have also defined.
+          - Replace the work "bin" with "HTB"
+            cat /etc/passwd | grep -v "false\|nologin" | tr ":" " " | awk '{print $1, $NF}' | sed 's/bin/HTB/g'
+          - The "s" flag at the beginning stands for the substitute command. Then we specify the pattern we want to replace. After the slash (/), 
+            we enter the pattern we want to use as a replacement in the third position. Finally, we use the "g" flag, which stands for replacing all matches.
+
+        - Wc
+          - Used to know how many successful matches we have. Use the -l option to specify only the lines are counted
+            cat /etc/passwd | grep -v "false\|nologin" | tr ":" " " | awk '{print $1, $NF}' | wc -l
 
 
+    - Regular Expressions
+
+        - Regex is often used in web applications for the validatin of user input
+
+        - Grouping
+          Operators
+            (a)              The round brackets are used to group parts of a regex. Within the brackets, you can define further patterns which should be processed together.
+
+            [a-z]            The square brackets are used to define character classes. Inside the brackets, you can specify a list of characters to search for.
+
+            {1, 10}          The curly brackets are used to define quantifiers. Inside the brackets, you can specify a number or a range that indicates how often a previous pattern should be repeated.
+
+            |                	Also called the OR operator and shows results when one of the two expressions matches
+
+            .*                Also called the AND operator and displayed results only if both expressions match
+            
 
 
+    - Permission Management
 
-
-
+      
 
 
 
