@@ -198,10 +198,88 @@ like cURL, netcat wget, python, gcc, are available on the operating system.
 
     - Permission Management
 
+        - Permissions are assigned to users and groups. 
+
+        - Cannot access a directory if you do not have execute permissions
+
+        - To execute files within a directory, user needs execute permissions
+
+        - To modify contents of a directory, the user needs write permissions
+
+        - Three different types of permissions a file or directory can be assigned:
+
+              (r) - Read
+              (w) - Write
+              (x) - Execute
+
+        - Permissions can be set for the owner, group, and others
+
+        - Permissions Breakdown
+
+          - rwx rw- r--     1 root root 1641 May   4 23:42 /etc/passwd
+
+              (From left to write)
+                (-) file type (- = File, d = Directory, l = Link, ... )
+                Permissions of the owner (read, write, execute)
+                Permissions of the group (read, write)
+                Permissinos of others (read)
+                number of hard links
+                user
+                group
+                file size
+                date
+
+        - Change permissions
+
+          - use the chmod command
+          - permissions group references (u - owner, g - Group, o - Others, a - All users), and either a [+] or [-] to add, remove the designated permissions
+
+        - Octal Method
+Binary Notation:                4 2 1  |  4 2 1  |  4 2 1
+----------------------------------------------------------
+Binary Representation:          1 1 1  |  1 0 1  |  1 0 0
+----------------------------------------------------------
+Octal Value:                      7    |    5    |    4
+----------------------------------------------------------
+Permission Representation:      r w x  |  r - x  |  r - -
+
+
+        - Change Owner
+
+          - Use the chown command
+              chown <user>:<group> <file/directory>
+
+
+        - SUID & SGID
+
+          - Set User ID
+          - Set Group ID
+          - Allow users to run programs with the rights of another user
+          - Admins use this to give their users rights for certain applications or files.
+          - (s) is used instead of an (x). When executing such a program, the SUID/SGID of the file owner is used.
+          SEE MORE ABOUT THIS @ https://gtfobins.github.io/gtfobins/journalctl/
+
+
+        - Sticky Bits
+
+          - This type of permission provides an extra layer of security when controlling the deletion and renaming of files within a directory.
+          - Typically used on directories that are shared by multiple users to prevent on user form accidentally deleting or renaming files that are important to others.
+          - Sticky bit is set on a directory, it is represented by the letter (t) in the execute permission of the directory's permissions.
+          - No one other than the owner or root user can delete or rename the files or folders in the directory
+          - If the sticky bit (T) is set, then this means that all other users do not have execute (x) permissions and, therefore, cannot see the contents of the folder nor run
+          any programs from it.The lowercase sticky bit (t) is the sticky bit where the execute (x) permissions have been set.
+
+
+
+
+
+
+
+
+
+          
+
       
 
 
-
-
-          - Can utilize vimtutor to practive and get familiar with the editor : Command mode, :Tutor
 
