@@ -112,6 +112,101 @@ Execute Multiple Commands
 
 
 
+Task Scheduling
+
+    - Systemd
+        - Service used to start processes and scripts at a specific time.
+        - Can setup processes and scripts to run at a specific time or time interval and can also specify specific events and triggers that will trigger a specific task
+        - Certain precations to take
+            - Create a timer
+            - Create a service
+            - Activate the timer
+
+    - Create a Timer
+        - Create a directory where the timer script will be stored
+            sudo mkdir /etc/systemd/myimter.timer.d
+            sudo vim /etc/systemd/system/mytimer.timer
+        - Create a script that configures the timer. Must containt the following options: "Unit" "Timer" "Install"
+            Mytimer.timer
+
+            [Unit]
+            Description=My Timer
+
+            [Timer]
+            OnBootSec=3min
+            OnUnitActiveSec=1hour
+
+            [Install]
+            WantedBy=timers.target
+
+        - Create a Service
+            sudo vim /etc/systemd/system/mytimer.service
+
+            [Unit]
+            Description=My Service
+
+            [Service]
+            ExecStart=/full/path/to/my/script.sh
+
+            [Install]
+            WantedBy=multi-user.target
+
+        - Let systemd read the folders again to include the changes and Reload Systemd
+            sudo systemctl daemon-reload
+
+        - Start and enable autostart with systemctl
+            sudo systemctl start mytimer.service
+            sudo systemctl enable mytimer.service
+
+        - Cron
+            - Used to schedule and automate processes
+
+            - To setup cron daemon:
+                - Need to store the tasks in a file called crontab
+                - Tell the daemon when to run the tasks
+            - Structire of Cron consists of the following components
+
+Time Frame	Description
+Minutes (0-59)	        This specifies in which minute the task should be executed.
+Hours (0-23)	        This specifies in which hour the task should be executed.
+Days of month (1-31)	This specifies on which day of the month the task should be executed.
+Months (1-12)	        This specifies in which month the task should be executed.
+Days of the week (0-7)	This specifies on which day of the week the task should be executed.
+
+            - Example Crontab
+
+            # System Update
+0 */6 * * /path/to/update_software.sh
+
+# Execute scripts
+0 0 1 * * /path/to/scripts/run_scripts.sh
+
+# Cleanup DB
+0 0 * * 0 /path/to/scripts/clean_database.sh
+
+# Backups
+0 0 * * 7 /path/to/scripts/backup.sh
+
+            - System update should occur every sixth hour
+            - execute scripts is to be executed every first day of the month at midnight
+            - Cleanup DB is executed every Sunday at midnight
+            - Backups is to be executed every Sunday at midnight.
+
+
+        - Differences between Cron and Systemd
+            - Systemd you need to create a timer and services script that tells the OS when to run the tasks
+            - Cron you need to create a crontab that tells the cron Daemon when to run the tasks
+
+
+
+Network Services
+
+    - ssh
+        - Allows the secure transmission of data and commands over a network
+        - Most common SSH server is the OpenSSH server
+        - Securely used for admin purposes
+
+
     
 
 
