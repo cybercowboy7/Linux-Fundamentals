@@ -206,6 +206,46 @@ Network Services
         - Most common SSH server is the OpenSSH server
         - Securely used for admin purposes
 
+        - Install ssh
+            sudo apt install openssh-server -y
+
+        - Check server status
+            systemctl status ssh
+
+        - ssh logging in
+            ssh user@<ipaddress>
+            - Can be configured and customized by editing the file /etc/ssh/sshd_config with a text editor
+            - Can adjust max number of concurrent connections, use of password or keys for logins, host key checking, etc.
+
+
+    - NFS (Network Files System)
+        - Allows us to store and manage files on remote systems as if they were stored on the local system
+        - Enables easy and efficient mangement of files across networks
+        - Admin use it to store and manage files centrally to enable easy collaboration and management of daya
+        - NFS-UTILS (ubuntu), NFS-Ganesha (Solaris), OpenNFS (Redhat Linux)
+
+        - Install NFS
+            sudo apt install nfs-kernel-server -y
+
+        - Check server status
+            systemctl status nfs-kernel-server
+
+        - Can Configure NFS via /etc/exports
+            - Specifies which directories should be shared and the access rights for users and systems
+
+            - Important access rights
+Permissions	                        Description
+rw	                Gives users and systems read and write permissions to the shared directory.
+ro	                Gives users and systems read-only access to the shared directory.
+no_root_squash	    Prevents the root user on the client from being restricted to the rights of a normal user.
+root_squash	        Restricts the rights of the root user on the client to the rights of a normal user.
+sync	            Synchronizes the transfer of data to ensure that changes are only transferred after they have been saved on the file system.
+async	            Transfers data asynchronously, which makes the transfer faster, but may cause inconsistencies in the file system if changes have not been fully
+
+
+        - Create NFS Share
+            
+
 
     
 
