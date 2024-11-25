@@ -292,6 +292,49 @@ async	            Transfers data asynchronously, which makes the transfer faster
             - Start python 3 web server using this : python3 -m http.server
 
 
+
+    Baclup and Restore
+
+        - Ubuntu tools for backing up and restoring
+            - Rsync
+                - Quickly an securely back up files and folders to a remote location.
+                - Useful for transferring large amounts of data over the network. Only transmits changed parts of a file
+                - Can create backups locally or on remote servers
+
+            - Deja Dup
+                - Graphical backup tool for ubuntu that simplifies tha backup process, allowing us to quickly and easily backup our data
+                - Uses Rsync as a backen and also supports data encryption
+
+            - Duplicity
+                - Adds the possibility to encrypt backup copies and store them on remote storage media, such as FTP servers, or cloud storage services, such as Amazon S3
+
+        - Encryption Tools for Backups
+            - GnuPG
+            - eCryptfs
+            - LUKS
+
+        - To install Rsync
+            - sudo apt install rsync -y
+
+        - Rsync : Backup a local Directory to our Backup-Server
+             rsync -av /path/to/mydirectory user@backup_server:/path/to/backup/directory
+
+        - Rsync : Restore our Backup
+             rsync -av user@remote_host:/path/to/backup/directory /path/to/mydirectory
+
+        - Encrypted Rsync
+            - rsync -avz -e ssh /path/to/mydirectory user@backup_server:/path/to/backup/directory
+
+        - Auto-Synchronization
+            - Create script called RSYNC_Backup.sh
+                #!/bin/bash
+
+                rsync -avz -e ssh /path/to/mydirectory user@backup_server:/path/to/backup/directory
+
+                chmod +x RSYN_Backup.sh
+
+                0 * * * * /path/to/RSYNC_Backup.sh
+
     
 
 
