@@ -274,6 +274,24 @@ async	            Transfers data asynchronously, which makes the transfer faster
                 - sudo openvpn --config internal.ovpn
 
 
+
+
+    Working with Web Services
+
+        - Apache
+            - Creates web pages dunamically using server-side scripting languages
+                - PHP, Perl, Ruby
+        - Install Apache using : apt install apache2 -y
+
+        - CURL
+            - Allows us to transfer files from the shell over protocols like HTTP, HTTPS, FTP, FTPS, SCP
+            - Can view individual requests to look at the client's and server's communication
+
+        - Python 3
+            - Web server's root directory is where the command is executed to start the server
+            - Start python 3 web server using this : python3 -m http.server
+
+
     
 
 
