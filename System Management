@@ -335,7 +335,20 @@ async	            Transfers data asynchronously, which makes the transfer faster
 
                 0 * * * * /path/to/RSYNC_Backup.sh
 
-    
+
+    - File System Management
+
+        - Linux supports ext2, ext3, ext4, XFS, Btrfs, NTFS
+
+        - Linux is based off of the Unix file system
+            - Top of structure is the inode table. Table of information associated
+        with each file and directory on a Linux system. Contains metadata about the
+        file or directory, such as permissions, size, type, owner etc.
+
+            - Files can be stored in file system two ways:
+                - Regular files
+                - Directories
+            
 
 
 
