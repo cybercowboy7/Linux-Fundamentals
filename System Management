@@ -377,6 +377,20 @@ async	            Transfers data asynchronously, which makes the transfer faster
 
     - SWAP
         - When system runs out of physical memory, the kernel transfers inactive pages of memory to the swap space. Known as swapping
+
+
+    - Containerization
+
+        - Process of packaging and running applications in isolated environments, such as a container, virtual machine, or serverless environment.
+        - You can use Docker, Docker Compose, and Linux Containers to succeed in this
+        - Applications are isolated from the host system and other containers
+
+
+    - Docker
+
+        - Open-source platform for automating the deployment of applications as self-contained units called containers.
+        - Uses a layered filesystem and resource isolation features to provide flexibility and portability.
+        - Provides a robust set of tools for creating, deploying, and managing applications, which helps streamline the continerization process
         
 
     
