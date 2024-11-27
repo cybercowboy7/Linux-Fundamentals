@@ -347,7 +347,39 @@ async	            Transfers data asynchronously, which makes the transfer faster
 
             - Files can be stored in file system two ways:
                 - Regular files
+                    - Most common and they are stored in root directory
                 - Directories
+                    - Stores collections of files
+                    - When a file is stored in a directory, the directory is known as the parent directory for the files.
+                - Symbolic Links
+                    - References to other files or directories
+                    - Can be used to quickly access files that are located in different parts of the files system
+
+
+    - Disks & Drives
+
+        - Main tool for disk management is fdisk. There is also gpart and GParted
+
+        - fdisk   
+            - Create, deletem manage partitions on a drive
+            - Can display size and type of each partition
+            - Partitioning a drive on Linux involves dividing the physical storage space into separate logical sections
+            - Each partition can be formatted with a specific file system and can be mounted as a separate file system
+
+
+    - Mounting
+
+        - Each logical partition or drive needs to be assigned to a specific directory on Linux
+        - Mounting involves attaching a drive to a specific directory making it accessible to the file system hierarchy
+        - The MOUNT tool can be used to mount file systems on LInux and the /etc/fstab file is used to define the default file systems that are mounted at boot time
+        - Can use the unmount command to unmount a file system
+        - To unmount a file system automatically at shutdown, the noauto option needs to be ini the /etc/fstab file for that file system
+
+    - SWAP
+        - When system runs out of physical memory, the kernel transfers inactive pages of memory to the swap space. Known as swapping
+        
+
+    
             
 
 
