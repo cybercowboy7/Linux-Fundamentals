@@ -271,6 +271,11 @@ Permission Representation:      r w x  |  r - x  |  r - -
 
 
 
+  - Linux Containers
+
+    - Installing LXC
+
+        sudo apt-get install lxc lxc-utils -y
 
           
 
