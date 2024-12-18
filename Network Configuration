@@ -1,0 +1,116 @@
+Configuring Network Interfaces
+
+    - utilize ifconfig or ip commands to manage network interfaces
+
+    - Activate Network Interface
+      sudo ifconfig eth0 up     #OR
+      sudo ip link set eth0 up
+
+    - Assign IP Address to an Interface
+      sudo ifconfig eth0 192.168.1.2
+
+    - Assign a Netmask to an Interface
+      sudo ifconfig eth0 netmask 255.255.255.0
+
+    - Assign the Route to an Interface
+      sudo route add default gw 192.168.1.1 eth0
+
+    - Editing DNS Settings
+      - The system can properly resolve domain names to IP addresses by adding the system's DNS information
+      sudo vim /etc/resolv.conf
+
+    - Editing Interfaces
+      sudo gedit /etc/netplan/*.yaml 
+      - This is for newer versions of ubuntu where you need to use the netplan apply command to apply interface configurations
+
+
+    - Restarting Network Service
+      sudo systemctl restart networking
+
+
+Network Access Control
+
+    - Discretionary Access Control
+      Enables users to manage access to their resources by granting resource owners the responsibility of controlling
+      access permissions to their resources.
+
+      Users and groups who own a specific resource can decide who has access to their resources and what actions they 
+      are authorized to perform
+
+
+
+    - Mandatory Access Control
+      Provides more fine grain control over resource access than DAC. Those systems define rules that define rules that 
+      determine resource access based on the resource's security level and the user's security level or process requesting
+      access. 
+
+      Each resource is assigned a security label that identifies its security level, and each user or process
+      is assigned a security clearance that identifies its security level.
+
+      Access to a resource is only granted if the user's or process's security level is equal to or greater than the security 
+      level of the resource
+
+
+    - Role-based Access Control
+      Assigns permissions to users based on their roles within an organization. Users are assigned roles based on their job 
+      responsibilities or other criteria, and each role is granted a set of permissions that determine the actions they can 
+      perform.
+
+      RBAC simplifies the management of access permissions, reduces the risk of errors, and ensures that users can access only 
+      the resources necessary to perform their job functions
+
+      RBAC provides a more flexible and scalable approach to managing resource access. In an RBAC system, each user is assigned 
+      one or more roles, and each role is assigned a set of permissions that define the user's actions. Resource access is granted 
+      based on the user's assigned role rather than their identity or ownership of the resource. RBAC systems are typically used in 
+      environments with many users and resources, such as large organizations, government agencies, and financial institutions.
+
+
+Troubleshooting
+
+    - ping
+    - Traceroute
+    - Netstat: Displays network connections and their associated ports. 
+    - Tcpdump
+    - Wireshark
+    - Nmap
+
+
+Hardening
+
+    - SELinux
+      MAC system that is built into the Linux kernel. Provides fine-grained access control over system resources and applicaitons.
+
+      Works by enforcing a policy that defines the access controls for each process and file on the system.
+
+      It providers a higher level of security by limiting the da,age that a compromised process can do.
+
+
+    - AppArmor
+      MAC system that provides a similar level of control over system resources and applications, but it works
+      slightly different. 
+
+      Implemented as a Linux Security Module (LSM) and uses application profiles to define the resources that an application can access.
+
+      Easier to implement then SELinux but not as granular.
+
+
+    - TCP wrappers
+      Host-based network access control mechanism that can be used to restrict access to network services based on the IP addresses
+      of the client system.
+
+      Works by intercepting incoming network requests and comparing the IP address of the client system to the access control
+      rules. Useful for limiting access to network services from unauthorized systems.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
