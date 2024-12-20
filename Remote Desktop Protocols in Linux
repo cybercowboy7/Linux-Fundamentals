@@ -1,0 +1,45 @@
+XServer
+
+    - User-side part of the X Window System network protocol (X11/ X)
+    - X11 consists of a collection of protocols and applications that allow us to call application windows on 
+displays in a graphical user interface
+    - X server are typcally in ports ranging from TCP6001-6009
+    - Can be used to access other computers
+    - Significant disadvantage is the unencrypted data transmission. Can overcome through using tunneling in SSH
+      - To do this, we have to allow X11 forwarding in the SSH configuration file (/etc/ssh/sshd_config) on the
+    server that provides the application by changing this option to yes.
+    - Vulnerabilities with X11: CVE-2017-2624, CVE-2017-2625, and CVE-2017-2626.
+
+
+XDMCP
+
+    - X Display Manager Control Protocol is used by X Display Manager for communication through UDP port 177 between
+X terminals and UNIX/Linux OSs.
+    - Insecure protocol
+    - Can be expploited through MITM
+
+
+VNC
+
+    - Virtual Network Computing (VNC) is a remote sharing system based on the RFB protocol that allows users to control
+a computer remotely. 
+    - Users can view and interact with a desktop environment remotely over a network connection
+    - Most common protocol for remote access
+    - Uses encryption
+    - Traditionally, VNC listens on TCP port 5900 and offers display 0
+    - Tool sfor setting up:
+      - TigerVNC
+      - TightVNC
+      - RealVNC
+      - UltraVNC
+
+
+TigerVNC Installation
+
+    sudo apt install xfce4 xfce4-goodies tigervnc-standalone-server -y
+    vncpasswd
+
+    - During installation, a hidden folder is created in the home directory called .vnc. Then, we have to create two additional 
+files, xstartup and config. The xstartup determines how the VNC session is created in connection with the display manager, and 
+the config determines its settings.
+    
