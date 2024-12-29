@@ -1,0 +1,35 @@
+Kernel Logs
+
+    - Hardware drivers
+    - System calls
+    - Kernel events
+    - Stored in /var/log/kern.log
+
+System Logs
+
+    - System-level events such as service starts and stops, login attempts, and system reboots
+    - Stored in /var/log/syslog
+
+Authentication Logs
+
+    - user authentication attempts, successful/failed
+    - Stored in /var/log/auth.log
+
+Application Logs
+
+    - Information about activities of specific applications running on the system
+    - Stored in own files such as /var/log/apache2/error.log
+
+Most common services default locations for access logs
+
+Apache 	Access logs are stored in the /var/log/apache2/access.log file (or similar, depending on the distribution).
+Nginx 	Access logs are stored in the /var/log/nginx/access.log file (or similar).
+OpenSSH 	Access logs are stored in the /var/log/auth.log file on Ubuntu and in /var/log/secure on CentOS/RHEL.
+MySQL 	Access logs are stored in the /var/log/mysql/mysql.log file.
+PostgreSQL 	Access logs are stored in the /var/log/postgresql/postgresql-version-main.log file.
+Systemd 	Access logs are stored in the /var/log/journal/ directory.
+
+Security Logs
+
+    - /var/log/syslog 
+    - /var/log/auth.log
