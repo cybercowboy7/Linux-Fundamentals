@@ -1,0 +1,70 @@
+Iptables
+
+- Flexible set of rules for filtering network based traffic based on various criteria such as source
+and destination IP addresses, port numbers, protocols, and more.
+
+
+
+
+Components of Iptables:
+
+- Tables: Used to organize and categorize firewall rules
+
+- Chains: Used to group a set of firewall rules applied to a specific type of network traffic
+
+- Rules: Define the criteria for filtering network traffic and the actions to take for packets that 
+match the criteria
+
+- Matches: Used to match specific criteria for filtering network traffic, such as source or destination
+IP addresses, ports, protocols, and more
+
+- Targets: Specify the action for packets that match a specific rule. For example, targets can be used 
+to accept, drop, or reject packets or modify the packets in another way.
+
+
+
+
+Tables:
+
+Table Name 	Description 	Built-in Chains
+filter 	    Used to filter network traffic based on IP addresses, ports, and protocols. 	      INPUT, OUTPUT, FORWARD
+nat 	      Used to modify the source or destination IP addresses of network packets. 	      PREROUTING, POSTROUTING
+mangle 	    Used to modify the header fields of network packets. 	      PREROUTING, OUTPUT, INPUT, FORWARD, POSTROUTING
+
+
+
+
+Chains:
+
+Organize rules that define how network traffic should be filtered or modified. 
+Two types of chains in iptables:
+    - Built-in chains: pre-defined and auto created when a table is created. Each table has a different
+set of built-in chains
+    - User-defined chains: simplify rule management by grouping firewall rules based on specific criteria,
+such as source IP address, dest. port, or protocol.
+
+
+
+
+
+
+Match Name 	Description
+-p or --protocol 	Specifies the protocol to match (e.g. tcp, udp, icmp)
+--dport 	Specifies the destination port to match
+--sport 	Specifies the source port to match
+-s or --source 	Specifies the source IP address to match
+-d or --destination 	Specifies the destination IP address to match
+-m state 	Matches the state of a connection (e.g. NEW, ESTABLISHED, RELATED)
+-m multiport 	Matches multiple ports or port ranges
+-m tcp 	Matches TCP packets and includes additional TCP-specific options
+-m udp 	Matches UDP packets and includes additional UDP-specific options
+-m string 	Matches packets that contain a specific string
+-m limit 	Matches packets at a specified rate limit
+-m conntrack 	Matches packets based on their connection tracking information
+-m mark 	Matches packets based on their Netfilter mark value
+-m mac 	Matches packets based on their MAC address
+-m iprange 	Matches packets based on a range of IP addresses
+
+
+
+
