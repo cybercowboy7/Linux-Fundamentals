@@ -1,0 +1,11 @@
+Security mechanism in linux systems that allow the sys admin to control which services are allowed 
+access to the system.
+
+- /etc/hosts.allow
+- /etc/hosts.deny
+
+Order of the rules in the files is important. First rule that matches the requested service and host is
+the one that will be applied.
+
+TCP wrappers are not a replacement for a firewall as they are limited by the fact that they can only control
+access to services and not to ports.
